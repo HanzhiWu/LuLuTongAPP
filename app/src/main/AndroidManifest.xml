@@ -11,7 +11,7 @@
         android:theme="@style/Theme.LuLuTong">
         <activity
             android:name=".RiskEvaluationActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/> <!-- 风险评估界面 -->
         <activity android:name=".MainActivity">
 
             <intent-filter>
@@ -26,7 +26,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录界面 -->
         <activity
             android:name=".LoginActivity.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 启动界面（主界面） -->
     </application>
 
 </manifest>

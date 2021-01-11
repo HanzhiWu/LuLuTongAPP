@@ -3,7 +3,9 @@ package com.example.lulutong;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.lulutong.widget.EditorBar;
 import com.example.lulutong.widget.InsideTitle;
@@ -24,11 +26,17 @@ public class RiskEvaluationActivity extends AppCompatActivity {
         initSubmit();
     }
 
+    /**
+     * 初始化标题
+     */
     private void setTitle() {
         title = findViewById(R.id.title);
         title.setTitle("风险评估");
     }
 
+    /**
+     * 初始化输入栏
+     */
     private void initEditor() {
         goodType = findViewById(R.id.good_type);
         goodType.setText("货物种类");
@@ -56,9 +64,34 @@ public class RiskEvaluationActivity extends AppCompatActivity {
         receiveAddress.setHint("请输入收货地址");
     }
 
-    private void initSubmit(){
-        submit=findViewById(R.id.submit);
+    /**
+     * 初始化提交功能
+     */
+    private void initSubmit() {
+        submit = findViewById(R.id.submit);
         submit.setText("提 交");
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //获取输入栏内容
+                String type, num, price, cosName, cosId, logName, sAdd, rAdd;
+                type = goodType.getText();
+                num = goodNum.getText();
+                price = orderPrice.getText();
+                cosName = costumerId.getText();
+                cosId = costumerId.getText();
+                logName = logisticName.getText();
+                sAdd = sendAddress.getText();
+                rAdd = receiveAddress.getText();
+                //检测是否有输入栏为空，若有空，则通知并结束点击事件
+                if (type.isEmpty() || num.isEmpty() || price.isEmpty() || cosName.isEmpty() ||
+                        cosId.isEmpty() || logName.isEmpty() || sAdd.isEmpty() || rAdd.isEmpty()) {
+                    Toast.makeText(RiskEvaluationActivity.this, "输入不能为空",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
     }
 
 }
