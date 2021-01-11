@@ -9,19 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LuLuTong">
+        <activity
+            android:name=".RiskEvaluationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".RigesterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录界面 -->
         <activity
             android:name=".LoginActivity.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 启动界面（主界面） -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
