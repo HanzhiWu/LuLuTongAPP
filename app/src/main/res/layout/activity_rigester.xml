@@ -17,63 +17,16 @@
         android:src="@drawable/logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="375dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline23">
-
-        <CheckBox
-            android:id="@+id/checkBox_agree"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1.8"
-            android:text="我已同意"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/BlueButton_Style"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="《用户协议》" />
-
-        <TextView
-            android:id="@+id/textView_PrivacyPolicy"
-            style="@style/BlueButton_Style"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="0dp"
-            android:layout_weight="2"
-            android:text="《隐私政策》" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -105,26 +58,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline15"
                 app:layout_constraintVertical_bias="1.0" />
-
-            <EditText
-                android:id="@+id/editText_email"
-                style="@style/EditText_Style"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_size"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="@dimen/button_marginBut"
-                android:background="@drawable/edittext_shape"
-                android:ems="10"
-                android:hint="请输入电子邮箱"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/guideline14"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline16" />
 
             <EditText
                 android:id="@+id/editText_setPasswrd"
@@ -169,6 +102,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
+            <EditText
+                android:id="@+id/editText_email"
+                style="@style/EditText_Style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_size"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="@dimen/button_marginBut"
+                android:background="@drawable/edittext_shape"
+                android:ems="10"
+                android:hint="请输入电子邮箱"
+                android:inputType="textEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_size"
@@ -186,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/button_shape"
-                    android:text="发送"
+                    android:text="发 送"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
@@ -229,9 +182,56 @@
                 android:layout_marginRight="60dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/button_shape"
-                android:text="注册"
+                android:text="注 册"
                 android:textColor="#F5ECEC"
                 android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="375dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox_agree"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1.8"
+                    android:paddingTop="1dp"
+                    android:text="我已同意"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/BlueButton_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="《用户协议》"
+                    android:textColor="@color/bottom_icon_blue" />
+
+                <TextView
+                    android:id="@+id/textView_PrivacyPolicy"
+                    style="@style/BlueButton_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_weight="2"
+                    android:text="《隐私政策》"
+                    android:textColor="@color/bottom_icon_blue" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -249,12 +249,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9206566" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

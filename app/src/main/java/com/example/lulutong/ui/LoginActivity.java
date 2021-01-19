@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.lulutong.R;
-import com.example.lulutong.dialog.DialogMaker;
+import com.example.lulutong.widget.dialog.DialogMaker;
 import com.example.lulutong.utils.okhttp.CallBackUtil;
 import com.example.lulutong.utils.okhttp.OkhttpUtil;
 import com.google.gson.Gson;
@@ -95,7 +95,10 @@ public class LoginActivity extends AppCompatActivity {
                         int isLogin = ((IsLogin) response).isLogin;
                         switch (isLogin) {
                             case 0:
-                                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(LoginActivity.this,RiskEvaluationActivity.class);
+                                startActivity(intent);
+                                finish();
                                 break;
                             case 1:
                                 Toast.makeText(LoginActivity.this, "没有该用户", Toast.LENGTH_SHORT).show();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lulutong">
-    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,22 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LuLuTong"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity">
+        <activity
 
-        </activity>
-        <activity
-            android:name=".ui.RigesterActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录界面 -->
-        <activity
-            android:name=".ui.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:name=".ui.BottomNavActivity.ButtomNavActivity"
+            android:label="@string/title_activity_buttom_nav">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 启动界面（主界面） -->
+        </activity>
+        <activity
+            android:name=".ui.RiskEvaluationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 风险评估界面 -->
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".ui.RigesterActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录界面 -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

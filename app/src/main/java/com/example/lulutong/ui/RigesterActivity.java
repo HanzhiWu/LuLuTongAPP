@@ -23,7 +23,7 @@ import okhttp3.Response;
 
 public class RigesterActivity extends AppCompatActivity {
     EditText editText_setPasswrd, editText_checkPass, editText_email, editText_cer_node, editText_usrname;
-    Button havAccount, successfulRegisters,send_cernode;
+    Button havAccount, successfulRegisters, send_cernode;
     String cernode;
 
     @Override
@@ -44,7 +44,7 @@ public class RigesterActivity extends AppCompatActivity {
         editText_usrname = findViewById(R.id.editText_usrname);
         havAccount = findViewById(R.id.button_havAccount);
         successfulRegisters = findViewById(R.id.button_successfulRegisters);
-        send_cernode=findViewById(R.id.send_cerNode);
+        send_cernode = findViewById(R.id.send_cerNode);
     }
 
     private void setView() {
@@ -77,28 +77,29 @@ public class RigesterActivity extends AppCompatActivity {
                     String jsonStr = gson.toJson(params);
                     String url = "http://www.lizerun.com:8081/android/register_data";
                     OkhttpUtil.okHttpPostJson(url, jsonStr, new CallBackUtil() {
+                        class IsRigester {
+                            int isRegister;
+
+                            public IsRigester(int isLogin) {
+                                this.isRegister = isLogin;
+                            }
+                        }
+
                         @Override
                         public Object onParseResponse(Call call, Response response) {
-                            class IsRigester {
-                                int isRegister;
-                                public IsRigester(int isLogin) {
-                                    this.isRegister = isLogin;
-                                }
-                            }
+
                             IsRigester isRigester = new IsRigester(-1);
 
                             try {
                                 String res = response.body().string();
-                                Log.d("jsonMsg",res);
-
-                                //gson.fromJson(res, IsRigester.class);
+                                isRigester = gson.fromJson(res, IsRigester.class);
 
 
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
-                            return new Integer(isRigester.isRegister);
+                            return isRigester;
                         }
 
                         @Override
@@ -108,7 +109,7 @@ public class RigesterActivity extends AppCompatActivity {
 
                         @Override
                         public void onResponse(Object response) {
-                            int res = ((Integer) response).intValue();
+                            int res = ((IsRigester) response).isRegister;
                             if (res == 0) {
                                 Toast.makeText(RigesterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                                 finish();
@@ -126,25 +127,34 @@ public class RigesterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = editText_email.getText().toString();
-                if(email == null || !Pattern.matches("^(\\w+([-.][A-Za-z0-9]+)*){3,18}@\\w+([-.][A-Za-z0-9]+)*\\.\\w+([-.][A-Za-z0-9]+)*$", email)){
+                if (email == null || !Pattern.matches("^(\\w+([-.][A-Za-z0-9]+)*){3,18}@\\w+([-.][A-Za-z0-9]+)*\\.\\w+([-.][A-Za-z0-9]+)*$", email)) {
                     Toast.makeText(RigesterActivity.this, "邮箱格式不正确", Toast.LENGTH_SHORT).show();
-                }else{
-                    HashMap<String,String> params=new HashMap<>();
-                    params.put("email",email);
-                    Gson gson=new Gson();
-                    String jsonStr=gson.toJson(params);
-                    String url="http://www.lizerun.com:8081/android/verification_code";
+                } else {
+                    HashMap<String, String> params = new HashMap<>();
+                    params.put("email", email);
+                    Gson gson = new Gson();
+                    String jsonStr = gson.toJson(params);
+                    String url = "http://www.lizerun.com:8081/android/verification_code";
                     OkhttpUtil.okHttpPostJson(url, jsonStr, new CallBackUtil() {
+                        class Ver_node {
+                            String verificationCode;
+
+                            public Ver_node(String verificationCode) {
+                                this.verificationCode = verificationCode;
+                            }
+                        }
+
                         @Override
                         public Object onParseResponse(Call call, Response response) {
+                            Ver_node node = new Ver_node("");
+                            try {
+                                String res = response.body().string();
+                                node = gson.fromJson(res, Ver_node.class);
 
-                            try{
-                                String res=response.body().string();
-
-                            }catch(Exception e){
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                            return null;
+                            return node;
                         }
 
                         @Override
@@ -154,7 +164,7 @@ public class RigesterActivity extends AppCompatActivity {
 
                         @Override
                         public void onResponse(Object response) {
-
+                            cernode = ((Ver_node) response).verificationCode;
                         }
                     });
                 }

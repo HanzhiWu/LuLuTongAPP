@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homepage"
+        android:icon="@drawable/homepage_grey"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/business_hall"
+        android:icon="@drawable/business_hall_grey"
+        android:title="@string/business_hall" />
+
+    <item
+        android:id="@+id/my_business"
+        android:icon="@drawable/my_business_grey"
+        android:title="@string/my_business" />
+    <item
+        android:id="@+id/personal_center"
+        android:icon="@drawable/personal_center_grey"
+        android:title="@string/personal_center" />
+
+</menu>

@@ -5,4 +5,9 @@
     <string name="todo">TODO</string>
     <string name="forget_password">忘记密码</string>
     <string name="personal_center_icon_title">个人中心</string>
+    <string name="title_activity_buttom_nav">路路通</string>
+    <string name="title_home">首页</string>
+    <string name="my_business">我的业务</string>
+    <string name="business_hall">业务大厅</string>
+    <string name="personal_center">个人中心</string>
 </resources>

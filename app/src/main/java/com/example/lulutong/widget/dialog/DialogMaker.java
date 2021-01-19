@@ -1,11 +1,8 @@
-package com.example.lulutong.dialog;
+package com.example.lulutong.widget.dialog;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.view.View;
-
-import com.example.lulutong.R;
 
 public class DialogMaker {
     public static final void MakeDialog(Context context, int iconId, String title, String message, String choice, DialogInterface.OnClickListener click){
