@@ -2,16 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lulutong">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LuLuTong"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.PDFRelated.PDFSearchActivity"></activity>
         <activity
-
             android:name=".ui.BottomNavActivity.ButtomNavActivity"
             android:label="@string/title_activity_buttom_nav">
             <intent-filter>
@@ -23,17 +28,13 @@
         <activity
             android:name=".ui.RiskEvaluationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 风险评估界面 -->
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".ui.RigesterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录界面 -->
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
